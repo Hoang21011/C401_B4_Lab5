@@ -29,10 +29,6 @@ Justify: *Augmentation — user thấy gợi ý và chấp nhận/từ chối, c
 
 ## 2. User Stories — 4 paths
 
-Mỗi feature chính = 1 bảng. AI trả lời xong → chuyện gì xảy ra?
-
-### Feature: *tên feature*
-
 ### **Feature 1: Chẩn đoán lỗi qua âm thanh và mô tả**
 
 **Trigger:** User nhập mô tả mơ hồ hoặc gửi đoạn ghi âm tiếng "kêu lạ" → AI phân tích và trả kết quả chẩn đoán sơ bộ.
