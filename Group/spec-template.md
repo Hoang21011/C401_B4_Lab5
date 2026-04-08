@@ -1,7 +1,9 @@
 # SPEC — AI Product Hackathon
 
 **Nhóm:** C401_B4
+
 **Track:** [x] VinFast · [ ] Vinmec · [ ] VinUni-VinSchool · [ ] XanhSM · [ ] Open
+
 **Problem statement (1 câu):** Người dùng mô tả lỗi mơ hồ: “xe rung”, “kêu lạ”, “hao xăng”, không biết cách liên hệ với thợ, cứu hộ trong trường hợp khẩn cấp. Không có hệ thống theo dõi lịch bảo dưỡng, AI giúp người dùng liên hệ với các thợ sửa xe và cứu hộ available ở gần user nhất. 
 
 ---
