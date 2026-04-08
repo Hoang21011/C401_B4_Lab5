@@ -70,15 +70,29 @@ Justify: *Augmentation — user thấy gợi ý và chấp nhận/từ chối, c
 
 ## 3. Eval metrics + threshold
 
-**Optimize precision hay recall?** ☐ Precision · ☐ Recall
-Tại sao? ___
-Nếu sai ngược lại thì chuyện gì xảy ra? *VD: Nếu chọn precision nhưng low recall → user không tìm thấy kết quả cần → bỏ dùng*
+## Optimize precision hay recall?
+☐ Precision · ☑ Recall  
+
+**Tại sao?**  
+Bài toán này ưu tiên **không bỏ sót các trường hợp cần xử lý (đặc biệt là lỗi nghiêm trọng)**. Nếu AI fail ở recall (không nhận ra lỗi cần sửa ngay), hậu quả trực tiếp là user **không hành động khi cần**, gây rủi ro cao hơn nhiều so với việc “báo động dư”.
+
+**Nếu chọn ngược lại (precision cao, recall thấp):**  
+→ Hệ thống chỉ trả lời khi rất chắc chắn  
+→ Bỏ sót nhiều case thực tế  
+→ User bị “false safe” (tưởng không sao nhưng thực ra có vấn đề)  
+→ Mất trust nhanh chóng, đặc biệt với lỗi nghiêm trọng  
+
+---
+
+## Core Metrics
 
 | Metric | Threshold | Red flag (dừng khi) |
 |--------|-----------|---------------------|
-| *VD: Accuracy phân loại đúng* | *≥85%* | *<70% trong 1 tuần* |
-|   |   |   |
-|   |   |   |
+| Diagnosis Recall (Top-3) | ≥ 80% | < 65% trong 1 tuần |
+| Urgency Classification Recall (Critical cases) | ≥ 90% | < 75% |
+| Time to First Action (reduction) | ≥ 50% | < 25% |
+| Cost Estimation Error | ≤ 25% | > 40% |
+| Contact Success Rate (Emergency) | ≥ 90% | < 70% |
 
 ---
 
