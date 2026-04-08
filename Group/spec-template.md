@@ -124,5 +124,12 @@ Bài toán này ưu tiên **không bỏ sót các trường hợp cần xử lý
 
 ## 6. Mini AI spec (1 trang)
 
-*Tóm tắt tự do — viết bằng ngôn ngữ tự nhiên, không format bắt buộc.*
-*Gom lại: product giải gì, cho ai, AI làm gì (auto/aug), quality thế nào (precision/recall), risk chính, data flywheel ra sao.*
+Sản phẩm này giải quyết bài toán người dùng xe VinFast thường chỉ mô tả triệu chứng rất mơ hồ như "xe rung", "kêu lạ", "hao xăng" nhưng lại cần ra quyết định nhanh: tiếp tục chạy, đi sửa, hay gọi cứu hộ ngay. Nhóm người dùng chính là tài xế cá nhân, người đi làm hàng ngày, và người đang gặp sự cố giữa đường nhưng không có kiến thức kỹ thuật để tự chẩn đoán.
+
+Vai trò của AI trong sản phẩm là augmentation có định hướng tự động hóa từng phần. AI tự động phân tích mô tả văn bản + âm thanh bất thường để đưa ra chẩn đoán sơ bộ, gán mức độ khẩn cấp, ước tính khoảng giá sửa chữa theo khu vực, và đề xuất thợ/cứu hộ gần nhất đang sẵn sàng. Tuy nhiên, quyết định cuối vẫn thuộc về người dùng: chọn phương án xử lý, xác nhận dịch vụ, hoặc sửa kết quả AI khi thấy chưa đúng. Với các ca rủi ro cao, AI ưu tiên kích hoạt flow hành động sớm thay vì chờ độ chắc chắn tuyệt đối.
+
+Về chất lượng hệ thống, hướng tối ưu là recall thay vì precision, đặc biệt cho các lỗi nghiêm trọng. Lý do là bỏ sót ca nguy hiểm gây hậu quả lớn hơn nhiều so với báo động dư. Ngưỡng vận hành mục tiêu gồm Diagnosis Recall (Top-3) >= 80%, Urgency Classification Recall cho critical cases >= 90%, giảm Time to First Action >= 50%, sai số ước tính chi phí <= 25%, và Contact Success Rate cho emergency >= 90%. Khi các chỉ số rơi xuống vùng red flag trong thời gian ngắn, hệ thống phải giảm tự động hóa và tăng xác nhận từ user.
+
+Rủi ro chính của sản phẩm gồm: chẩn đoán sai nhưng tự tin cao (dễ tạo cảm giác an toàn giả), phân loại sai mức độ khẩn cấp (điều phối sai loại dịch vụ), và benchmark giá lỗi thời theo khu vực (làm giảm trust). Cách giảm rủi ro là hiển thị mức tin cậy minh bạch, luôn có phương án "Không đúng lỗi này" hoặc "Đổi phương án cứu hộ", và thiết kế fallback an toàn theo hướng ưu tiên cứu hộ khi tín hiệu khẩn cấp chưa rõ ràng.
+
+Data flywheel của hệ thống hình thành từ tương tác thực tế: người dùng sửa kết luận chẩn đoán, tải hóa đơn thực tế, nhập chi phí đã trả, đánh dấu lý do đổi/hủy dịch vụ, và phản hồi kết quả sau cứu hộ. Dữ liệu này đi vào các kho Correction Log, Market Price Database, và Incident Log để cập nhật Service Matching Model theo khu vực và theo loại lỗi. Mỗi vòng lặp giúp AI tăng recall cho lỗi nặng, thu hẹp sai số giá, và cải thiện tốc độ kết nối đúng người đúng dịch vụ, từ đó tăng trust và tần suất sử dụng sản phẩm.
