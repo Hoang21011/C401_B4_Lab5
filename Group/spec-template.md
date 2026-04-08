@@ -1,8 +1,8 @@
 # SPEC — AI Product Hackathon
 
 **Nhóm:** C401_B4
-**Track:** ☐ VinFast
-**Problem statement (1 câu):** *Ai gặp vấn đề gì, hiện giải thế nào, AI giúp được gì*
+**Track:** [x] VinFast · [ ] Vinmec · [ ] VinUni-VinSchool · [ ] XanhSM · [ ] Open
+**Problem statement (1 câu):** Người dùng mô tả lỗi mơ hồ: “xe rung”, “kêu lạ”, “hao xăng”, không biết cách liên hệ với thợ, cứu hộ trong trường hợp khẩn cấp. Không có hệ thống theo dõi lịch bảo dưỡng, AI giúp người dùng liên hệ với các thợ sửa xe và cứu hộ available ở gần user nhất. 
 
 ---
 
@@ -31,16 +31,42 @@ Mỗi feature chính = 1 bảng. AI trả lời xong → chuyện gì xảy ra?
 
 ### Feature: *tên feature*
 
-**Trigger:** *VD: User nhận email mới → AI phân loại → ...*
+### **Feature 1: Chẩn đoán lỗi qua âm thanh và mô tả**
+
+**Trigger:** User nhập mô tả mơ hồ hoặc gửi đoạn ghi âm tiếng "kêu lạ" → AI phân tích và trả kết quả chẩn đoán sơ bộ.
 
 | Path | Câu hỏi thiết kế | Mô tả |
 |------|-------------------|-------|
-| Happy — AI đúng, tự tin | User thấy gì? Flow kết thúc ra sao? | *Email tự gắn nhãn "Urgent", user thấy đúng, tiếp tục làm việc* |
-| Low-confidence — AI không chắc | System báo "không chắc" bằng cách nào? User quyết thế nào? | *Hiện 2 nhãn gợi ý + confidence %, user chọn 1* |
-| Failure — AI sai | User biết AI sai bằng cách nào? Recover ra sao? | *Email quan trọng bị gắn "FYI" → user thấy khi review → sửa nhãn* |
-| Correction — user sửa | User sửa bằng cách nào? Data đó đi vào đâu? | *Kéo thả sang nhãn đúng → correction log → cải thiện model* |
+| **Happy — AI đúng, tự tin** | User thấy gì? Flow kết thúc ra sao? | Hiển thị 1 kết quả duy nhất kèm độ nguy hiểm (Ví dụ: "85% Lỏng dây curoa - Cần thay sớm"). User bấm "Đặt lịch" hoặc "Xem giá tham khảo". |
+| **Low-confidence — AI không chắc** | System báo "không chắc" bằng cách nào? User quyết thế nào? | Chatbot phản hồi: "Có 2 khả năng xảy ra: Lỗi A (60%) hoặc Lỗi B (40%)". AI yêu cầu user làm thêm 1 hành động để thu hẹp kết quả. |
+| **Failure — AI sai** | User biết AI sai bằng cách nào? Recover ra sao? | User thấy chẩn đoán không khớp (Ví dụ: AI báo lỗi động cơ nhưng xe vẫn rung khi tắt máy). User bảo "Không phải lỗi này" → Hệ thống chuyển hướng sang bộ câu hỏi loại trừ hoặc kết nối thợ. |
+| **Correction — user sửa** | User sửa bằng cách nào? Data đó đi vào đâu? | User chọn vùng lỗi đúng trên sơ đồ xe 3D hoặc nhập kết luận từ thợ sau khi đi sửa về → Lưu vào **Correction Log** kèm file âm thanh gốc để re-train model. |
 
-*Lặp lại cho feature thứ 2-3 nếu có.*
+---
+
+### **Feature 2: Tra cứu Benchmark giá sửa chữa**
+
+**Trigger:** Sau khi xác định lỗi → AI truy xuất cơ sở dữ liệu thị trường → Đưa ra khoảng giá dự kiến.
+
+| Path | Câu hỏi thiết kế | Mô tả |
+|------|-------------------|-------|
+| **Happy — AI đúng, tự tin** | User thấy gì? Flow kết thúc ra sao? | Hiển thị bảng giá chi tiết (Phụ tùng + Công thợ) dựa trên khu vực của user. User thấy minh bạch, chọn "Ghé gara gần nhất". |
+| **Low-confidence — AI không chắc** | System báo "không chắc" bằng cách nào? User quyết thế nào? | AI báo: "Giá phụ tùng này đang biến động". Hiển thị khoảng giá rộng (Ví dụ: 1.2tr - 2tr) kèm danh sách 3 gara có báo giá thực tế gần nhất để user tự so sánh. |
+| **Failure — AI sai** | User biết AI sai bằng cách nào? Recover ra sao? | User ra gara và nhận báo giá lệch quá nhiều (>30%) so với AI → User chụp ảnh hóa đơn gửi vào chat để "khiếu nại" hoặc cập nhật thông tin. |
+| **Correction — user sửa** | User sửa bằng cách nào? Data đó đi vào đâu? | User nhập số tiền thực tế đã chi trả → Dữ liệu đi vào **Market Price Database** để cập nhật benchmark real-time cho các user khác cùng khu vực. |
+
+---
+
+### **Feature 3: Điều phối Cứu hộ & Kết nối thợ khẩn cấp (Emergency Assistance)**
+
+**Trigger:** User gửi tin nhắn có từ khóa khẩn cấp ("xe chết máy giữa đường", "nổ lốp", "mất phanh") hoặc kết quả chẩn đoán ở Feature 1 xác định lỗi nguy hiểm không thể tiếp tục di chuyển.
+
+| Path | Câu hỏi thiết kế | Mô tả |
+|------|-------------------|-------|
+| **Happy — AI đúng, tự tin** | User thấy gì? Flow kết thúc ra sao? | AI xác định đúng loại hình cần thiết. Hiển thị danh sách thợ/cứu hộ gần nhất đang sẵn sàng. User bấm "Gọi ngay", dòng trạng thái cứu hộ hiện ra. |
+| **Low-confidence — AI không chắc** | System báo "không chắc" bằng cách nào? User quyết thế nào? | AI không rõ xe có thể nổ máy lại được không. AI hỏi: "Xe có lên điện/đèn không?". Nếu user trả lời "Không", AI tự động đề xuất Cứu hộ kéo xe thay vì chỉ thợ sửa lưu động. |
+| **Failure — AI sai** | User biết AI sai bằng cách nào? Recover ra sao? | AI điều thợ sửa lốp nhưng thực tế xe bị hỏng thước lái (cần xe kéo). User thấy thợ đến nhưng không giải quyết được → User nhấn nút "Thay đổi phương án: Cần xe kéo" ngay trong giao diện đang theo dõi. |
+| **Correction — user sửa** | User sửa bằng cách nào? Data đó đi vào đâu? | User chọn lý do hủy/đổi dịch vụ (VD: "Lỗi nặng hơn chẩn đoán ban đầu"). Data đi vào **Incident Log** và **Service Matching Model** để AI học cách phân loại mức độ nghiêm trọng chính xác hơn. |
 
 ---
 
