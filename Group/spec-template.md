@@ -1,7 +1,7 @@
 # SPEC — AI Product Hackathon
 
 **Nhóm:** ___
-**Track:** ☐ VinFast · ☐ Vinmec · ☐ VinUni-VinSchool · ☐ XanhSM · ☐ Open
+**Track:** ☐ VinFast
 **Problem statement (1 câu):** *Ai gặp vấn đề gì, hiện giải thế nào, AI giúp được gì*
 
 ---
