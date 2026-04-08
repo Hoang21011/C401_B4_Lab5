@@ -259,9 +259,10 @@ Hệ thống tạo **data flywheel mạnh** từ hành vi thực tế:
 
 
 Phân công:
-* Nguyen Hoang Nghia: Part 5. 
-* Pham Nguyen Tien Manh: Part 4. 
 * Nguyen Thi Thuy Trang: Part 1. 
+* Trinh Uyen Chi: Part 2. 
+* Tran Viet Phuong: Part 3.
+* Pham Nguyen Tien Manh: Part 4. 
+* Nguyen Hoang Nghia: Part 5. 
 * Nguyen Ngoc Tan: Part 6. 
 * Le Duc Anh: Part 6. 
-* Trinh Uyen Chi: Part 2. 
