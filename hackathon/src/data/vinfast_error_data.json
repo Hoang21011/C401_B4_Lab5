@@ -12,16 +12,28 @@
         "Cảm giác xe bị kéo ngược khi tăng tốc"
       ],
       "causes": [
-        {"cause": "Lỗi bộ điều khiển động cơ", "confidence": 0.6},
-        {"cause": "Pin yếu hoặc quá nhiệt", "confidence": 0.3},
-        {"cause": "Lỗi phần mềm", "confidence": 0.1}
+        { "cause": "Lỗi bộ điều khiển động cơ", "confidence": 0.6 },
+        { "cause": "Pin yếu hoặc quá nhiệt", "confidence": 0.3 },
+        { "cause": "Lỗi phần mềm", "confidence": 0.1 }
       ],
       "severity": "high",
       "fix_suggestions": [
         "Tắt xe và khởi động lại",
         "Không tiếp tục chạy xa",
         "Đưa xe đến trung tâm VinFast"
-      ]
+      ],
+      "pricing": {
+        "inspection_price": 200000,
+        "estimated_fix_price_range": {
+          "min": 500000,
+          "max": 5000000
+        },
+        "rescue_price_range": {
+          "min": 300000,
+          "max": 1200000
+        },
+        "note": "Giá chỉ mang tính tham khảo, phụ thuộc dòng xe, nguyên nhân thực tế và khu vực."
+      }
     },
     {
       "error_code": "BAT002",
@@ -35,9 +47,9 @@
         "Xe nóng bất thường dù không chạy lâu"
       ],
       "causes": [
-        {"cause": "Sạc trong môi trường nhiệt độ cao", "confidence": 0.5},
-        {"cause": "Hệ thống làm mát pin lỗi", "confidence": 0.4},
-        {"cause": "Pin xuống cấp", "confidence": 0.1}
+        { "cause": "Sạc trong môi trường nhiệt độ cao", "confidence": 0.5 },
+        { "cause": "Hệ thống làm mát pin lỗi", "confidence": 0.4 },
+        { "cause": "Pin xuống cấp", "confidence": 0.1 }
       ],
       "severity": "critical",
       "fix_suggestions": [
@@ -45,7 +57,125 @@
         "Để xe nguội tự nhiên",
         "Không tiếp tục sạc",
         "Gọi cứu hộ nếu cần"
-      ]
+      ],
+      "pricing": {
+        "inspection_price": 300000,
+        "estimated_fix_price_range": {
+          "min": 1000000,
+          "max": 15000000
+        },
+        "rescue_price_range": {
+          "min": 300000,
+          "max": 1500000
+        },
+        "note": "Nếu liên quan đến cụm pin hoặc hệ thống làm mát pin, chi phí có thể cao hơn đáng kể."
+      }
+    },
+    {
+      "error_code": "CHG003",
+      "title": "Charging Failure",
+      "description": "Xe không thể sạc hoặc quá trình sạc bị gián đoạn bất thường.",
+      "symptoms": [
+        "Cắm sạc nhưng không vào điện",
+        "Đang sạc thì tự ngắt",
+        "Đèn báo sạc nhấp nháy bất thường",
+        "Ứng dụng báo lỗi sạc",
+        "Thời gian sạc lâu hơn bình thường"
+      ],
+      "causes": [
+        { "cause": "Cổng sạc bẩn hoặc lỏng", "confidence": 0.4 },
+        { "cause": "Bộ sạc gặp lỗi", "confidence": 0.35 },
+        { "cause": "Lỗi phần mềm quản lý sạc", "confidence": 0.25 }
+      ],
+      "severity": "medium",
+      "fix_suggestions": [
+        "Kiểm tra lại đầu cắm sạc",
+        "Thử đổi trụ sạc hoặc bộ sạc khác",
+        "Khởi động lại xe",
+        "Mang xe đi kiểm tra nếu lỗi lặp lại"
+      ],
+      "pricing": {
+        "inspection_price": 150000,
+        "estimated_fix_price_range": {
+          "min": 200000,
+          "max": 4000000
+        },
+        "rescue_price_range": {
+          "min": 0,
+          "max": 800000
+        },
+        "note": "Nếu chỉ vệ sinh hoặc siết lại cổng sạc thì chi phí thấp; thay cụm sạc sẽ cao hơn."
+      }
+    },
+    {
+      "error_code": "BRK004",
+      "title": "Brake System Warning",
+      "description": "Hệ thống phanh phát cảnh báo bất thường.",
+      "symptoms": [
+        "Đèn cảnh báo phanh sáng",
+        "Phanh ăn kém",
+        "Xe phát tiếng rít khi phanh",
+        "Bàn đạp phanh nặng hoặc lún bất thường",
+        "Quãng đường phanh dài hơn bình thường"
+      ],
+      "causes": [
+        { "cause": "Má phanh mòn", "confidence": 0.5 },
+        { "cause": "Thiếu dầu phanh hoặc rò rỉ", "confidence": 0.3 },
+        { "cause": "Lỗi cảm biến ABS/ESP", "confidence": 0.2 }
+      ],
+      "severity": "critical",
+      "fix_suggestions": [
+        "Hạn chế tiếp tục di chuyển",
+        "Kiểm tra ngay hệ thống phanh",
+        "Gọi cứu hộ nếu phanh không còn an toàn"
+      ],
+      "pricing": {
+        "inspection_price": 200000,
+        "estimated_fix_price_range": {
+          "min": 500000,
+          "max": 6000000
+        },
+        "rescue_price_range": {
+          "min": 300000,
+          "max": 1200000
+        },
+        "note": "Đây là nhóm lỗi an toàn cao, ưu tiên xử lý ngay thay vì tiếp tục chạy."
+      }
+    },
+    {
+      "error_code": "STR005",
+      "title": "Steering Assistance Failure",
+      "description": "Hệ thống trợ lực lái điện hoạt động bất thường.",
+      "symptoms": [
+        "Vô lăng nặng bất thường",
+        "Đèn cảnh báo vô lăng sáng",
+        "Xe lệch hướng nhẹ",
+        "Vô lăng trả lái chậm",
+        "Nghe tiếng kêu khi đánh lái"
+      ],
+      "causes": [
+        { "cause": "Lỗi mô-tơ trợ lực lái", "confidence": 0.5 },
+        { "cause": "Điện áp thấp", "confidence": 0.25 },
+        { "cause": "Lỗi cảm biến góc lái", "confidence": 0.25 }
+      ],
+      "severity": "high",
+      "fix_suggestions": [
+        "Giảm tốc độ",
+        "Không tiếp tục chạy đường dài",
+        "Đưa xe đi kiểm tra sớm"
+      ],
+      "pricing": {
+        "inspection_price": 200000,
+        "estimated_fix_price_range": {
+          "min": 800000,
+          "max": 8000000
+        },
+        "rescue_price_range": {
+          "min": 300000,
+          "max": 1200000
+        },
+        "note": "Nếu chỉ lỗi cảm biến hoặc reset phần mềm thì chi phí thấp hơn thay cụm trợ lực."
+      }
     }
   ],
   "SEVERITY_LABEL": {
