@@ -13,7 +13,8 @@ def search_garages(location: str) -> str:
     """
 
     import os
-    data_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'mock_garages.json')
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(current_dir, "..", "data", "mock_garages.json")
     with open(data_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
