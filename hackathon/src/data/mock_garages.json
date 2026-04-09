@@ -1,0 +1,148 @@
+{
+  "Hà Nội": {
+    "Thanh Xuân": [
+      {
+        "id": "GAR001",
+        "name": "Garage Minh Phát",
+        "location": "123 Nguyễn Trãi",
+        "city": "Hà Nội",
+        "open_hours": "08:00 - 18:00",
+        "current_status": {
+          "cars_in_service": 5,
+          "cars_waiting": 3,
+          "total_mechanics": 6,
+          "last_updated": "2026-04-09T09:00:00"
+        }
+      }
+    ],
+    "Cầu Giấy": [
+      {
+        "id": "GAR010",
+        "name": "Garage Thành Công",
+        "location": "12 Trần Duy Hưng",
+        "city": "Hà Nội",
+        "open_hours": "08:00 - 19:00",
+        "current_status": {
+          "cars_in_service": 6,
+          "cars_waiting": 2,
+          "total_mechanics": 7,
+          "last_updated": "2026-04-09T09:00:00"
+        }
+      }
+    ],
+    "Hai Bà Trưng": [
+      {
+        "id": "GAR011",
+        "name": "Garage Bách Khoa",
+        "location": "88 Giải Phóng",
+        "city": "Hà Nội",
+        "open_hours": "07:30 - 18:30",
+        "current_status": {
+          "cars_in_service": 4,
+          "cars_waiting": 5,
+          "total_mechanics": 5,
+          "last_updated": "2026-04-09T09:00:00"
+        }
+      }
+    ],
+    "Long Biên": [
+      {
+        "id": "GAR012",
+        "name": "Garage Việt Đức",
+        "location": "15 Nguyễn Văn Cừ",
+        "city": "Hà Nội",
+        "open_hours": "08:00 - 18:00",
+        "current_status": {
+          "cars_in_service": 3,
+          "cars_waiting": 4,
+          "total_mechanics": 4,
+          "last_updated": "2026-04-09T09:00:00"
+        }
+      }
+    ]
+  },
+
+  "Hồ Chí Minh": {
+    "Quận 1": [
+      {
+        "id": "GAR101",
+        "name": "Garage Sài Gòn Auto",
+        "location": "25 Nguyễn Thị Minh Khai",
+        "city": "Hồ Chí Minh",
+        "open_hours": "08:00 - 20:00",
+        "current_status": {
+          "cars_in_service": 7,
+          "cars_waiting": 6,
+          "total_mechanics": 8,
+          "last_updated": "2026-04-09T09:00:00"
+        }
+      }
+    ],
+    "Quận 7": [
+      {
+        "id": "GAR102",
+        "name": "Garage Phú Mỹ Hưng",
+        "location": "12 Nguyễn Văn Linh",
+        "city": "Hồ Chí Minh",
+        "open_hours": "08:00 - 19:00",
+        "current_status": {
+          "cars_in_service": 5,
+          "cars_waiting": 3,
+          "total_mechanics": 6,
+          "last_updated": "2026-04-09T09:00:00"
+        }
+      }
+    ]
+  },
+
+  "Đà Nẵng": {
+    "Hải Châu": [
+      {
+        "id": "GAR201",
+        "name": "Garage Trung Tâm Đà Nẵng",
+        "location": "45 Lê Duẩn",
+        "city": "Đà Nẵng",
+        "open_hours": "08:00 - 18:30",
+        "current_status": {
+          "cars_in_service": 4,
+          "cars_waiting": 2,
+          "total_mechanics": 5,
+          "last_updated": "2026-04-09T09:00:00"
+        }
+      }
+    ],
+    "Sơn Trà": [
+      {
+        "id": "GAR202",
+        "name": "Garage Biển Đông",
+        "location": "78 Võ Nguyên Giáp",
+        "city": "Đà Nẵng",
+        "open_hours": "07:00 - 18:00",
+        "current_status": {
+          "cars_in_service": 3,
+          "cars_waiting": 3,
+          "total_mechanics": 4,
+          "last_updated": "2026-04-09T09:00:00"
+        }
+      }
+    ]
+  },
+
+  "Hải Phòng": {
+    "Lê Chân": [
+      {
+        "id": "GAR301",
+        "name": "Garage Hải Phòng Auto",
+        "location": "123 Tô Hiệu",
+        "city": "Hải Phòng",
+        "open_hours": "08:00 - 18:00",
+        "current_status": {
+          "cars_in_service": 5,
+          "cars_waiting": 2,
+          "total_mechanics": 6,
+          "last_updated": "2026-04-09T09:00:00"
+        }
+      }
+    ]
+  }
+}

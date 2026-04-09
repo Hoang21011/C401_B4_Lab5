@@ -1,0 +1,530 @@
+{
+  "GAR001": [
+    {
+      "id": "MECH001",
+      "name": "Nguyễn Văn Hùng",
+      "garage_id": "GAR001",
+      "garage_name": "Garage Minh Phát",
+      "experience_years": 8,
+      "rating": 4.7,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH002",
+      "name": "Trần Quốc Minh",
+      "garage_id": "GAR001",
+      "garage_name": "Garage Minh Phát",
+      "experience_years": 5,
+      "rating": 4.5,
+      "current_jobs": 2,
+      "status": "busy"
+    },
+    {
+      "id": "MECH003",
+      "name": "Phạm Đức Anh",
+      "garage_id": "GAR001",
+      "garage_name": "Garage Minh Phát",
+      "experience_years": 6,
+      "rating": 4.6,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH004",
+      "name": "Lê Văn Trường",
+      "garage_id": "GAR001",
+      "garage_name": "Garage Minh Phát",
+      "experience_years": 7,
+      "rating": 4.4,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH005",
+      "name": "Vũ Quang Hải",
+      "garage_id": "GAR001",
+      "garage_name": "Garage Minh Phát",
+      "experience_years": 4,
+      "rating": 4.3,
+      "current_jobs": 0,
+      "status": "available"
+    },
+    {
+      "id": "MECH006",
+      "name": "Đỗ Mạnh Cường",
+      "garage_id": "GAR001",
+      "garage_name": "Garage Minh Phát",
+      "experience_years": 9,
+      "rating": 4.8,
+      "current_jobs": 1,
+      "status": "busy"
+    }
+  ],
+  "GAR010": [
+    {
+      "id": "MECH010",
+      "name": "Nguyễn Hữu Phong",
+      "garage_id": "GAR010",
+      "garage_name": "Garage Thành Công",
+      "experience_years": 10,
+      "rating": 4.8,
+      "current_jobs": 2,
+      "status": "busy"
+    },
+    {
+      "id": "MECH011",
+      "name": "Trần Đức Long",
+      "garage_id": "GAR010",
+      "garage_name": "Garage Thành Công",
+      "experience_years": 7,
+      "rating": 4.6,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH012",
+      "name": "Lê Quốc Bảo",
+      "garage_id": "GAR010",
+      "garage_name": "Garage Thành Công",
+      "experience_years": 6,
+      "rating": 4.5,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH013",
+      "name": "Phan Minh Tâm",
+      "garage_id": "GAR010",
+      "garage_name": "Garage Thành Công",
+      "experience_years": 5,
+      "rating": 4.4,
+      "current_jobs": 0,
+      "status": "available"
+    },
+    {
+      "id": "MECH014",
+      "name": "Đặng Văn Khánh",
+      "garage_id": "GAR010",
+      "garage_name": "Garage Thành Công",
+      "experience_years": 8,
+      "rating": 4.7,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH015",
+      "name": "Hoàng Gia Huy",
+      "garage_id": "GAR010",
+      "garage_name": "Garage Thành Công",
+      "experience_years": 4,
+      "rating": 4.3,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH016",
+      "name": "Bùi Thanh Sơn",
+      "garage_id": "GAR010",
+      "garage_name": "Garage Thành Công",
+      "experience_years": 9,
+      "rating": 4.7,
+      "current_jobs": 1,
+      "status": "available"
+    }
+  ],
+  "GAR011": [
+    {
+      "id": "MECH017",
+      "name": "Ngô Văn Dũng",
+      "garage_id": "GAR011",
+      "garage_name": "Garage Bách Khoa",
+      "experience_years": 8,
+      "rating": 4.6,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH018",
+      "name": "Vũ Đức Tài",
+      "garage_id": "GAR011",
+      "garage_name": "Garage Bách Khoa",
+      "experience_years": 6,
+      "rating": 4.5,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH019",
+      "name": "Phạm Anh Kiệt",
+      "garage_id": "GAR011",
+      "garage_name": "Garage Bách Khoa",
+      "experience_years": 5,
+      "rating": 4.4,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH020",
+      "name": "Trịnh Minh Nhật",
+      "garage_id": "GAR011",
+      "garage_name": "Garage Bách Khoa",
+      "experience_years": 7,
+      "rating": 4.5,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH021",
+      "name": "Đoàn Quang Hưng",
+      "garage_id": "GAR011",
+      "garage_name": "Garage Bách Khoa",
+      "experience_years": 9,
+      "rating": 4.7,
+      "current_jobs": 1,
+      "status": "busy"
+    }
+  ],
+  "GAR012": [
+    {
+      "id": "MECH022",
+      "name": "Nguyễn Thành Đạt",
+      "garage_id": "GAR012",
+      "garage_name": "Garage Việt Đức",
+      "experience_years": 7,
+      "rating": 4.6,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH023",
+      "name": "Lý Văn Nam",
+      "garage_id": "GAR012",
+      "garage_name": "Garage Việt Đức",
+      "experience_years": 5,
+      "rating": 4.4,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH024",
+      "name": "Phùng Đức Mạnh",
+      "garage_id": "GAR012",
+      "garage_name": "Garage Việt Đức",
+      "experience_years": 6,
+      "rating": 4.5,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH025",
+      "name": "Tạ Quang Vinh",
+      "garage_id": "GAR012",
+      "garage_name": "Garage Việt Đức",
+      "experience_years": 8,
+      "rating": 4.7,
+      "current_jobs": 0,
+      "status": "available"
+    }
+  ],
+  "GAR101": [
+    {
+      "id": "MECH101",
+      "name": "Trần Văn Khôi",
+      "garage_id": "GAR101",
+      "garage_name": "Garage Sài Gòn Auto",
+      "experience_years": 10,
+      "rating": 4.8,
+      "current_jobs": 2,
+      "status": "busy"
+    },
+    {
+      "id": "MECH102",
+      "name": "Nguyễn Hoàng Phúc",
+      "garage_id": "GAR101",
+      "garage_name": "Garage Sài Gòn Auto",
+      "experience_years": 7,
+      "rating": 4.6,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH103",
+      "name": "Lê Minh Quân",
+      "garage_id": "GAR101",
+      "garage_name": "Garage Sài Gòn Auto",
+      "experience_years": 8,
+      "rating": 4.7,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH104",
+      "name": "Phạm Thanh Tùng",
+      "garage_id": "GAR101",
+      "garage_name": "Garage Sài Gòn Auto",
+      "experience_years": 5,
+      "rating": 4.4,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH105",
+      "name": "Đỗ Nhật Anh",
+      "garage_id": "GAR101",
+      "garage_name": "Garage Sài Gòn Auto",
+      "experience_years": 6,
+      "rating": 4.5,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH106",
+      "name": "Bùi Quốc Thắng",
+      "garage_id": "GAR101",
+      "garage_name": "Garage Sài Gòn Auto",
+      "experience_years": 9,
+      "rating": 4.7,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH107",
+      "name": "Ngô Tuấn Kiệt",
+      "garage_id": "GAR101",
+      "garage_name": "Garage Sài Gòn Auto",
+      "experience_years": 4,
+      "rating": 4.3,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH108",
+      "name": "Võ Duy Khang",
+      "garage_id": "GAR101",
+      "garage_name": "Garage Sài Gòn Auto",
+      "experience_years": 7,
+      "rating": 4.6,
+      "current_jobs": 1,
+      "status": "available"
+    }
+  ],
+  "GAR102": [
+    {
+      "id": "MECH109",
+      "name": "Nguyễn Hữu Tâm",
+      "garage_id": "GAR102",
+      "garage_name": "Garage Phú Mỹ Hưng",
+      "experience_years": 8,
+      "rating": 4.7,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH110",
+      "name": "Trần Gia Bảo",
+      "garage_id": "GAR102",
+      "garage_name": "Garage Phú Mỹ Hưng",
+      "experience_years": 6,
+      "rating": 4.5,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH111",
+      "name": "Lê Khánh Duy",
+      "garage_id": "GAR102",
+      "garage_name": "Garage Phú Mỹ Hưng",
+      "experience_years": 5,
+      "rating": 4.4,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH112",
+      "name": "Phan Hoài Nam",
+      "garage_id": "GAR102",
+      "garage_name": "Garage Phú Mỹ Hưng",
+      "experience_years": 7,
+      "rating": 4.6,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH113",
+      "name": "Đặng Minh Hiếu",
+      "garage_id": "GAR102",
+      "garage_name": "Garage Phú Mỹ Hưng",
+      "experience_years": 9,
+      "rating": 4.7,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH114",
+      "name": "Bùi Văn Trọng",
+      "garage_id": "GAR102",
+      "garage_name": "Garage Phú Mỹ Hưng",
+      "experience_years": 4,
+      "rating": 4.3,
+      "current_jobs": 0,
+      "status": "available"
+    }
+  ],
+  "GAR201": [
+    {
+      "id": "MECH201",
+      "name": "Nguyễn Đức Sơn",
+      "garage_id": "GAR201",
+      "garage_name": "Garage Trung Tâm Đà Nẵng",
+      "experience_years": 9,
+      "rating": 4.8,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH202",
+      "name": "Trần Văn Duy",
+      "garage_id": "GAR201",
+      "garage_name": "Garage Trung Tâm Đà Nẵng",
+      "experience_years": 6,
+      "rating": 4.5,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH203",
+      "name": "Lê Quang Huy",
+      "garage_id": "GAR201",
+      "garage_name": "Garage Trung Tâm Đà Nẵng",
+      "experience_years": 5,
+      "rating": 4.4,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH204",
+      "name": "Phạm Nhật Hoàng",
+      "garage_id": "GAR201",
+      "garage_name": "Garage Trung Tâm Đà Nẵng",
+      "experience_years": 7,
+      "rating": 4.6,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH205",
+      "name": "Đặng Quốc Việt",
+      "garage_id": "GAR201",
+      "garage_name": "Garage Trung Tâm Đà Nẵng",
+      "experience_years": 8,
+      "rating": 4.7,
+      "current_jobs": 0,
+      "status": "available"
+    }
+  ],
+  "GAR202": [
+    {
+      "id": "MECH206",
+      "name": "Nguyễn Thanh Bình",
+      "garage_id": "GAR202",
+      "garage_name": "Garage Biển Đông",
+      "experience_years": 7,
+      "rating": 4.6,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH207",
+      "name": "Lê Minh Tài",
+      "garage_id": "GAR202",
+      "garage_name": "Garage Biển Đông",
+      "experience_years": 5,
+      "rating": 4.4,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH208",
+      "name": "Phan Hải Nam",
+      "garage_id": "GAR202",
+      "garage_name": "Garage Biển Đông",
+      "experience_years": 6,
+      "rating": 4.5,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH209",
+      "name": "Đỗ Anh Khoa",
+      "garage_id": "GAR202",
+      "garage_name": "Garage Biển Đông",
+      "experience_years": 4,
+      "rating": 4.3,
+      "current_jobs": 0,
+      "status": "available"
+    }
+  ],
+  "GAR301": [
+    {
+      "id": "MECH301",
+      "name": "Nguyễn Văn Trung",
+      "garage_id": "GAR301",
+      "garage_name": "Garage Hải Phòng Auto",
+      "experience_years": 9,
+      "rating": 4.7,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH302",
+      "name": "Trần Đức Hiệp",
+      "garage_id": "GAR301",
+      "garage_name": "Garage Hải Phòng Auto",
+      "experience_years": 6,
+      "rating": 4.5,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH303",
+      "name": "Lê Thành Đô",
+      "garage_id": "GAR301",
+      "garage_name": "Garage Hải Phòng Auto",
+      "experience_years": 5,
+      "rating": 4.4,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH304",
+      "name": "Phạm Quang Huy",
+      "garage_id": "GAR301",
+      "garage_name": "Garage Hải Phòng Auto",
+      "experience_years": 7,
+      "rating": 4.6,
+      "current_jobs": 1,
+      "status": "available"
+    },
+    {
+      "id": "MECH305",
+      "name": "Đặng Văn Tín",
+      "garage_id": "GAR301",
+      "garage_name": "Garage Hải Phòng Auto",
+      "experience_years": 8,
+      "rating": 4.7,
+      "current_jobs": 1,
+      "status": "busy"
+    },
+    {
+      "id": "MECH306",
+      "name": "Bùi Thanh Nam",
+      "garage_id": "GAR301",
+      "garage_name": "Garage Hải Phòng Auto",
+      "experience_years": 4,
+      "rating": 4.3,
+      "current_jobs": 0,
+      "status": "available"
+    }
+  ]
+}
