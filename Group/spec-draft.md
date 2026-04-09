@@ -2,7 +2,7 @@
 
 **Nhóm:** C401_B4
 
-**Track:** [x] VinFast · [ ] Vinmec · [ ] VinUni-VinSchool · [ ] XanhSM · [ ] Open
+**Track:** ☑ VinFast · ☐ Vinmec · ☐ VinUni-VinSchool · ☐ XanhSM · ☐ Open
 
 **Problem statement (1 câu):** Người dùng mô tả lỗi mơ hồ: “xe rung”, “kêu lạ”, không biết cách liên hệ với thợ, cứu hộ trong trường hợp khẩn cấp, AI giúp người dùng liên hệ với các thợ sửa xe và cứu hộ available ở gần user nhất. 
 
@@ -18,7 +18,7 @@
 ||Aug: Nhận mô tả từ khách hàng -> hỏi follow up -> suy luận 3-5 nguyên nhân + hướng xử lý (tự check / check gara / cảnh báo cho khách) -> xử lý theo hướng phù hợp (giúp khách đặt lịch sửa chữa / cứu hộ với gara)|Recovery: Hiển thị nhiều phương án  + khuyến nghị kiểm tra lại + đề xuất liên hệ trực tiếp với gara. |Risk: Chuẩn đoán sai do input mơ hồ; estimate giá lệch; review gara bị bias|
 ||Value: Hỗ trợ 24/7, tiết kiệm thời gian, hỗ trợ khách hàng nhanh chóng||Dep: Database lỗi xe + thông tin gara/thợ + giá sửa chữa + API mapping gara|
 
-**Automation hay augmentation?** ☐ Automation · [x] Augmentation
+**Automation hay augmentation?** ☐ Automation · ☑ Augmentation
 <br>Justify: *Augmentation — AI chỉ gợi ý nguyên nhân, hướng xử lý và chi phí, hỗ trợ người dùng liên hệ / đặt lịch với gara nếu có nhu cầu; người dùng là người ra quyết định cuối cùng, đặc biệt trong các tình huống có rủi ro kỹ thuật cao*
 
 **Learning signal:**
@@ -27,7 +27,7 @@
 |---|---------|---------|
 |1| User correction đi vào đâu?| Log các hành vi: user chọn nguyên nhân khác, bỏ qua đề xuất, thay đổi triệu chứng mô tả → đưa vào hệ thống để cải thiện thứ tự nguyên nhân và độ chính xác gợi ý|
 |2| Product thu signal gì để biết tốt lên hay tệ đi?| - Tỷ lệ user chọn 1 trong các nguyên nhân đề xuất (accept rate) <br> - Tỷ lệ user phải hỏi lại / mô tả lại (re-query rate) <br> - Tỷ lệ chuyển sang gara (conversion to action) <br> - Tỷ lệ user abandon giữa chừng (drop-off rate) <br> - Feedback sau sửa chữa (đúng bệnh hay không) 
-|3| Data thuộc loại nào?| [x] User-specific · [x] Domain-specific · [x] Real-time · [x] Human-judgment · [x] Khác: Behavioral data|
+|3| Data thuộc loại nào?| ☑ User-specific · ☑ Domain-specific · ☑ Real-time · ☑ Human-judgment · ☑ Khác: Behavioral data|
 
 Có marginal value không? (Model đã biết cái này chưa?) <br> Có. Dữ liệu mang marginal value cao vì phản ánh hành vi thực tế của người dùng trong việc mô tả triệu chứng, lựa chọn nguyên nhân và kết quả sửa chữa. Đây là dữ liệu không có sẵn trong model và khó thu thập từ nguồn công khai, giúp cải thiện đáng kể khả năng chẩn đoán và ranking theo ngữ cảnh thực tế.
 
@@ -171,18 +171,18 @@ Target:
    * Detect symptom entities
 4. Clarification loop (nếu cần)
 5. Diagnosis engine:
-6. 
+
    * Hybrid: LLM reasoning + rule-based + knowledge base
-7. Output:
+6. Output:
 
    * Nguyên nhân (ranked)
    * Mức độ nguy hiểm
    * Hành động đề xuất
-8. Retrieval:
+7. Retrieval:
 
    * Giá sửa chữa (market DB)
    * Gara/thợ (geo + availability API)
-9. Action layer:
+8. Action layer:
 
    * Booking / emergency dispatch
 
