@@ -25,4 +25,4 @@ Chatbot thu thập thông số xe và dẫn dắt người dùng làm rõ các t
 | Nghia | ROI 3 Kịch Bản + Define Tool + Quality Control | spec/spec_final.md 5, Tool search_mechanic, Consistent Spec|
 | Dũng | UI prototype + demo script | prototype/, demo/demo-script.md |
 | Phương | Evaluation metric + build agent | spec/spec_final.md phần 3, agent, agent.py, main.py|
-
+| Mạnh | Failure mode, viết tool diagnose + lookup_error_by_code | tools/diagnose.py, spec/spec_final.md phần 4 |
