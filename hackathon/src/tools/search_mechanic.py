@@ -18,7 +18,7 @@ Returns:
     # =========================
     # 1. Đọc dữ liệu từ file .txt
     # =========================
-    with open('data/mock_mechanics.json', "r", encoding="utf-8") as file:
+    with open('./data/mock_mechanics.json', "r", encoding="utf-8") as file:
         data = json.load(file)  # parse JSON từ txt
 
     results = []
