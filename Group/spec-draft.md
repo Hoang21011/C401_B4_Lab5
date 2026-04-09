@@ -118,7 +118,12 @@ Liệt kê các cách product có thể fail — tập trung vào những lỗi 
 **Product này giải gì, cho ai?**
 Đây là một AI assistant dành cho **chủ xe (xe máy/ô tô, đặc biệt là user VinFast)** không có kiến thức kỹ thuật. Vấn đề chính là user mô tả lỗi mơ hồ (“xe rung”, “kêu lạ”), không biết mức độ nghiêm trọng, không biết giá sửa chữa hợp lý, và gặp khó khăn khi cần liên hệ thợ/cứu hộ. Product giúp **rút ngắn thời gian từ “có vấn đề” → “hành động đúng”**.
 
+
 ---
+
+<img width="981" height="801" alt="image" src="https://github.com/user-attachments/assets/c55493e8-d808-4465-ad2d-08f4700b33a1" />
+<img width="981" height="801" alt="image" src="https://github.com/user-attachments/assets/c55493e8-d808-4465-ad2d-08f4700b33a1" />
+
 
 **AI làm gì (automation vs augmentation)?**
 Hệ thống theo hướng **augmentation**:
@@ -159,7 +164,7 @@ Target:
 
 **System flow (end-to-end)**
 
-1. User nhập mô tả / gửi audio
+1. User nhập mô tả
 2. LLM:
    
    * Parse intent
