@@ -4,7 +4,7 @@
 
 **Track:** [x] VinFast · [ ] Vinmec · [ ] VinUni-VinSchool · [ ] XanhSM · [ ] Open
 
-**Problem statement (1 câu):** Người dùng mô tả lỗi mơ hồ: “xe rung”, “kêu lạ”, “hao xăng”, không biết cách liên hệ với thợ, cứu hộ trong trường hợp khẩn cấp, AI giúp người dùng liên hệ với các thợ sửa xe và cứu hộ available ở gần user nhất. 
+**Problem statement (1 câu):** Người dùng mô tả lỗi mơ hồ: “xe rung”, “kêu lạ”, không biết cách liên hệ với thợ, cứu hộ trong trường hợp khẩn cấp, AI giúp người dùng liên hệ với các thợ sửa xe và cứu hộ available ở gần user nhất. 
 
 ---
 
@@ -116,14 +116,14 @@ Liệt kê các cách product có thể fail — tập trung vào những lỗi 
 ## 6. Mini AI spec (1 trang)
 
 **Product này giải gì, cho ai?**
-Đây là một AI assistant dành cho **chủ xe (xe máy/ô tô, đặc biệt là user VinFast)** không có kiến thức kỹ thuật. Vấn đề chính là user mô tả lỗi mơ hồ (“xe rung”, “kêu lạ”, “hao xăng”), không biết mức độ nghiêm trọng, không biết giá sửa chữa hợp lý, và gặp khó khăn khi cần liên hệ thợ/cứu hộ. Product giúp **rút ngắn thời gian từ “có vấn đề” → “hành động đúng”**.
+Đây là một AI assistant dành cho **chủ xe (xe máy/ô tô, đặc biệt là user VinFast)** không có kiến thức kỹ thuật. Vấn đề chính là user mô tả lỗi mơ hồ (“xe rung”, “kêu lạ”), không biết mức độ nghiêm trọng, không biết giá sửa chữa hợp lý, và gặp khó khăn khi cần liên hệ thợ/cứu hộ. Product giúp **rút ngắn thời gian từ “có vấn đề” → “hành động đúng”**.
 
 ---
 
 **AI làm gì (automation vs augmentation)?**
 Hệ thống theo hướng **augmentation**:
 
-* Nhận input: text mô tả + audio (tiếng xe)
+* Nhận input: text mô tả
 * Hỏi follow-up để làm rõ triệu chứng
 * Suy luận:
 
@@ -160,24 +160,24 @@ Target:
 **System flow (end-to-end)**
 
 1. User nhập mô tả / gửi audio
-2. LLM + classifier:
-
+2. LLM:
+   
    * Parse intent
    * Detect symptom entities
-3. Clarification loop (nếu cần)
-4. Diagnosis engine:
-
+4. Clarification loop (nếu cần)
+5. Diagnosis engine:
+6. 
    * Hybrid: LLM reasoning + rule-based + knowledge base
-5. Output:
+7. Output:
 
    * Nguyên nhân (ranked)
    * Mức độ nguy hiểm
    * Hành động đề xuất
-6. Retrieval:
+8. Retrieval:
 
    * Giá sửa chữa (market DB)
    * Gara/thợ (geo + availability API)
-7. Action layer:
+9. Action layer:
 
    * Booking / emergency dispatch
 
@@ -209,7 +209,7 @@ Hệ thống tạo **data flywheel mạnh** từ hành vi thực tế:
 
 * Input data:
 
-  * Mô tả lỗi (text, audio)
+  * Mô tả lỗi (text)
   * Context (loại xe, khu vực, thời gian)
 
 * Behavioral signals:
@@ -235,7 +235,7 @@ Hệ thống tạo **data flywheel mạnh** từ hành vi thực tế:
 
 ---
 
-**Why this wins (moat)**
+**Why this wins**
 
 * Dữ liệu hành vi + kết quả sửa chữa thực tế (khó crawl/public)
 * Kết hợp **diagnosis + pricing + action** (end-to-end, không chỉ chatbot)
