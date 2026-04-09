@@ -10,8 +10,7 @@ from langchain_core.tools import tool
 # Load data từ JSON
 # ---------------------------------------------------------------------------
 
-_DATA_PATH = Path(__file__).parent / "data" / "vinfast_error_data.json"
-
+_DATA_PATH = Path(__file__).parent.parent / "data" / "vinfast_error_data.json"
 def _load_data() -> tuple[list[dict], dict]:
     with open(_DATA_PATH, encoding="utf-8") as f:
         raw = json.load(f)
@@ -181,24 +180,6 @@ def search_error_by_symptom(symptom_description: str, top_k: int = 1) -> str:
 
 
 @tool
-def get_all_error_codes() -> str:
-    """
-    Liệt kê tất cả mã lỗi VinFast hiện có trong hệ thống cùng mức độ nghiêm trọng.
-
-    Returns:
-        Danh sách mã lỗi và tiêu đề.
-    """
-    lines = ["📋 Danh sách mã lỗi VinFast trong hệ thống:\n"]
-    for err in ERROR_DATA:
-        sev = SEVERITY_LABEL.get(err["severity"], err["severity"])
-        lines.append(f"  • {err['error_code']} — {err['title']} [{sev}]")
-    lines.append(
-        "\nBạn có thể hỏi chi tiết theo mã lỗi hoặc mô tả triệu chứng cụ thể."
-    )
-    return "\n".join(lines)
-
-
-@tool
 def get_emergency_action(error_code: str) -> str:
     """
     Lấy hướng dẫn xử lý khẩn cấp cho mã lỗi nghiêm trọng (critical/high).
@@ -239,10 +220,30 @@ def get_emergency_action(error_code: str) -> str:
     )
 
 
+@tool
+def diagnose(description: str, car_history: str = "") -> str:
+    """
+    Dự đoán lỗi dựa trên triệu chứng và ngữ cảnh lịch sử xe (ODO, lần bảo trì cuối).
+    Đây là tool chính thức được sử dụng để đưa ra chẩn đoán lỗi.
+    
+    Args:
+        description: Mô tả triệu chứng bằng ngôn ngữ tự nhiên từ người dùng.
+        car_history: Lịch sử bảo dưỡng của xe (ODO, model, các lần bảo dưỡng gần nhất).
+        
+    Returns:
+        Kết quả chẩn đoán lỗi kèm theo thông tin lịch sử xe được xử lý.
+    """
+    # Gọi hàm search internal
+    result = search_error_by_symptom.invoke({"symptom_description": description, "top_k": 2})
+    
+    if "❌ Không tìm thấy" in result:
+        return result
+        
+    return f"THÔNG TIN XE: {car_history}\n\n{result}"
+
 # Danh sách tools export cho agent
 VINFAST_TOOLS = [
     lookup_error_by_code,
-    search_error_by_symptom,
-    get_all_error_codes,
+    diagnose,
     get_emergency_action,
 ]

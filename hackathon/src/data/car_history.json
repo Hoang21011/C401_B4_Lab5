@@ -1,0 +1,12 @@
+{
+  "VIN001": {
+    "model": "VinFast VF8",
+    "odo": "200 km",
+    "history": "Chưa có lịch sử bảo dưỡng (0 history)"
+  },
+  "VIN002": {
+    "model": "VinFast VF9",
+    "odo": "15,000 km",
+    "history": "Lần bảo dưỡng cuối: 10,000 km ngày 15/03/2026. Thay lọc gió, kiểm tra pin, phần mềm version 9.3."
+  }
+}

@@ -12,9 +12,18 @@
         "Cảm giác xe bị kéo ngược khi tăng tốc"
       ],
       "causes": [
-        {"cause": "Lỗi bộ điều khiển động cơ", "confidence": 0.6},
-        {"cause": "Pin yếu hoặc quá nhiệt", "confidence": 0.3},
-        {"cause": "Lỗi phần mềm", "confidence": 0.1}
+        {
+          "cause": "Lỗi bộ điều khiển động cơ",
+          "confidence": 0.6
+        },
+        {
+          "cause": "Pin yếu hoặc quá nhiệt",
+          "confidence": 0.3
+        },
+        {
+          "cause": "Lỗi phần mềm",
+          "confidence": 0.1
+        }
       ],
       "severity": "high",
       "fix_suggestions": [
@@ -35,9 +44,18 @@
         "Xe nóng bất thường dù không chạy lâu"
       ],
       "causes": [
-        {"cause": "Sạc trong môi trường nhiệt độ cao", "confidence": 0.5},
-        {"cause": "Hệ thống làm mát pin lỗi", "confidence": 0.4},
-        {"cause": "Pin xuống cấp", "confidence": 0.1}
+        {
+          "cause": "Sạc trong môi trường nhiệt độ cao",
+          "confidence": 0.5
+        },
+        {
+          "cause": "Hệ thống làm mát pin lỗi",
+          "confidence": 0.4
+        },
+        {
+          "cause": "Pin xuống cấp",
+          "confidence": 0.1
+        }
       ],
       "severity": "critical",
       "fix_suggestions": [

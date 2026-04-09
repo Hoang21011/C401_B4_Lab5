@@ -18,7 +18,9 @@ Returns:
     # =========================
     # 1. Đọc dữ liệu từ file .txt
     # =========================
-    with open('data/mock_mechanics.json', "r", encoding="utf-8") as file:
+    import os
+    data_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'mock_mechanics.json')
+    with open(data_path, "r", encoding="utf-8") as file:
         data = json.load(file)  # parse JSON từ txt
 
     results = []

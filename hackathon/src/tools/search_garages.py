@@ -12,7 +12,9 @@ def search_garages(location: str) -> str:
         str: danh sách garage format đẹp
     """
 
-    with open("../data/mock_garages.json", "r", encoding="utf-8") as f:
+    import os
+    data_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'mock_garages.json')
+    with open(data_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     results = []
