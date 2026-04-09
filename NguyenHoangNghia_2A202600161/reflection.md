@@ -5,7 +5,7 @@ Developer, Phụ trách thiết kế tool cho chatbot và viết/hoàn thiện S
 
 ## 2. Đóng góp cụ thể
 - Thiết kế và implement tool search_mechanic (tìm thợ/cứu hộ available)
-- Viết và double-check file `spec_final`, đảm bảo logic giữa các phần consistent
+- Viết part 5 của Spec và double-check file `spec_final`, đảm bảo logic giữa các phần consistent
 - Review các module trong chatbot (flow + tool integration)
 - Chủ động tìm bugs trong flow và spec 
 
