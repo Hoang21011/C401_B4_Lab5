@@ -7,7 +7,7 @@ Developer, Phụ trách thiết kế tool cho chatbot và viết/hoàn thiện S
 - Thiết kế và implement tool search_mechanic (tìm thợ/cứu hộ available)
 - Viết và double-check file `spec_final`, đảm bảo logic giữa các phần consistent
 - Review các module trong chatbot (flow + tool integration)
-- Chủ động tìm bugs trong flow và spec (edge cases)
+- Chủ động tìm bugs trong flow và spec 
 
 ## 3. SPEC mạnh/yếu
 - **Mạnh nhất:** Flow end-to-end rõ ràng (diagnosis → decision → action), đặc biệt phần emergency có thể chuyển thành hành động thật (gọi thợ/cứu hộ), không chỉ dừng ở suggestion  
