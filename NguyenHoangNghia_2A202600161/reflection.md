@@ -15,7 +15,6 @@ Developer, Phụ trách thiết kế tool cho chatbot và viết/hoàn thiện S
 
 ## 4. Đóng góp khác
 - Đóng góp ý kiến để refine các module chatbot (đặc biệt phần tool calling và decision logic)
-- Phát hiện các inconsistency giữa UX flow và backend assumption
 - Hỗ trợ debug các vấn đề liên quan đến logic matching
 
 ## 5. Điều học được
@@ -31,6 +30,6 @@ spec tốt phải cover cả failure modes, data flow, và real-world constraint
 
 ## 7. AI giúp gì / AI sai gì
 - **Giúp:** dùng AI để draft spec nhanh, generate edge cases và hỗ trợ rà soát logic (đặc biệt ở failure modes và user flows)  
-- **Sai/mislead:** AI đôi khi đề xuất giải pháp quá “ideal” (giả định data luôn đúng, system luôn available), không phản ánh đúng constraint thực tế. Các đóng góp của AI đôi khi không sát với dữ liệu và bài toán của nhớm
+- **Sai/mislead:** AI đôi khi đề xuất giải pháp quá “ideal” (giả định data luôn đúng, system luôn available), không phản ánh đúng constraint thực tế. Các đóng góp của AI đôi khi không sát với dữ liệu và bài toán của nhóm
 
 → Bài học: AI hữu ích cho ideation và speed, nhưng cần con người để validate về feasibility và system design**
