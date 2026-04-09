@@ -1,7 +1,7 @@
 # Individual reflection — Nguyễn Hoàng Nghĩa (2A202600161)
 
 ## 1. Role
-Developer. Phụ trách thiết kế tool cho chatbot và viết/hoàn thiện SPEC.
+Developer, Phụ trách thiết kế tool cho chatbot và viết/hoàn thiện SPEC.
 
 ## 2. Đóng góp cụ thể
 - Thiết kế và implement tool search_mechanic (tìm thợ/cứu hộ available)
