@@ -3,7 +3,7 @@ from typing import List, Dict
 import json
 
 @tool
-def search_available_mechanics(garage_id: str) -> List[Dict]:
+def search_mechanic(garage_id: str) -> List[Dict]:
     """
 Tìm thợ sửa xe gần vị trí người dùng nhất và còn lịch trống,
 dựa trên mô tả sự cố của xe và thời gian yêu cầu. Có thể dùng trong cả trường hợp bình thường hoặc sau khi xử lý tình huống khẩn cấp.
