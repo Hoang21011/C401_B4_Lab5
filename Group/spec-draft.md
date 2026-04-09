@@ -4,7 +4,7 @@
 
 **Track:** [x] VinFast · [ ] Vinmec · [ ] VinUni-VinSchool · [ ] XanhSM · [ ] Open
 
-**Problem statement (1 câu):** Người dùng mô tả lỗi mơ hồ: “xe rung”, “kêu lạ”, “hao xăng”, không biết cách liên hệ với thợ, cứu hộ trong trường hợp khẩn cấp, AI giúp người dùng liên hệ với các thợ sửa xe và cứu hộ available ở gần user nhất. 
+**Problem statement (1 câu):** Người dùng mô tả lỗi mơ hồ: “xe rung”, “kêu lạ”, không biết cách liên hệ với thợ, cứu hộ trong trường hợp khẩn cấp, AI giúp người dùng liên hệ với các thợ sửa xe và cứu hộ available ở gần user nhất. 
 
 ---
 
@@ -33,9 +33,9 @@ Có marginal value không? (Model đã biết cái này chưa?) <br> Có. Dữ l
 
 ## 2. User Stories — 4 paths
 
-### **Feature 1: Chẩn đoán lỗi qua âm thanh và mô tả**
+### **Feature 1: Chẩn đoán lỗi qua mô tả**
 
-**Trigger:** User nhập mô tả mơ hồ hoặc gửi đoạn ghi âm tiếng "kêu lạ" → AI phân tích và trả kết quả chẩn đoán sơ bộ.
+**Trigger:** User nhập mô tả mơ hồ → AI phân tích và trả kết quả chẩn đoán sơ bộ.
 
 | Path | Câu hỏi thiết kế | Mô tả |
 |------|-------------------|-------|
@@ -46,20 +46,7 @@ Có marginal value không? (Model đã biết cái này chưa?) <br> Có. Dữ l
 
 ---
 
-### **Feature 2: Tra cứu Benchmark giá sửa chữa**
-
-**Trigger:** Sau khi xác định lỗi → AI truy xuất cơ sở dữ liệu thị trường → Đưa ra khoảng giá dự kiến.
-
-| Path | Câu hỏi thiết kế | Mô tả |
-|------|-------------------|-------|
-| **Happy — AI đúng, tự tin** | User thấy gì? Flow kết thúc ra sao? | Hiển thị bảng giá chi tiết (Phụ tùng + Công thợ) dựa trên khu vực của user. User thấy minh bạch, chọn "Ghé gara gần nhất". |
-| **Low-confidence — AI không chắc** | System báo "không chắc" bằng cách nào? User quyết thế nào? | AI báo: "Giá phụ tùng này đang biến động". Hiển thị khoảng giá rộng (Ví dụ: 1.2tr - 2tr) kèm danh sách 3 gara có báo giá thực tế gần nhất để user tự so sánh. |
-| **Failure — AI sai** | User biết AI sai bằng cách nào? Recover ra sao? | User ra gara và nhận báo giá lệch quá nhiều (>30%) so với AI → User chụp ảnh hóa đơn gửi vào chat để "khiếu nại" hoặc cập nhật thông tin. |
-| **Correction — user sửa** | User sửa bằng cách nào? Data đó đi vào đâu? | User nhập số tiền thực tế đã chi trả → Dữ liệu đi vào **Market Price Database** để cập nhật benchmark real-time cho các user khác cùng khu vực. |
-
----
-
-### **Feature 3: Điều phối Cứu hộ & Kết nối thợ khẩn cấp (Emergency Assistance)**
+### **Feature 2: Điều phối Cứu hộ & Kết nối thợ khẩn cấp (Emergency Assistance)**
 
 **Trigger:** User gửi tin nhắn có từ khóa khẩn cấp ("xe chết máy giữa đường", "nổ lốp", "mất phanh") hoặc kết quả chẩn đoán ở Feature 1 xác định lỗi nguy hiểm không thể tiếp tục di chuyển.
 
@@ -106,9 +93,9 @@ Liệt kê các cách product có thể fail — tập trung vào những lỗi 
 
 | #   | Trigger                                                                                                                        | Hậu quả                                                                                                               | Mitigation                                                                                                                         |
 | --- | ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | AI hiểu sai ngữ cảnh do ngôn ngữ tự nhiên (vd: user nói “hao xăng” nhưng thực ra do thói quen lái xe, không phải lỗi kỹ thuật) | AI vẫn đưa ra chẩn đoán “có vẻ hợp lý” → user tin nhưng thực tế không có lỗi → sửa chữa không cần thiết (waste money) | Clarify intent bằng câu hỏi phân biệt (behavior vs mechanical); dùng decision tree để tách “usage issue” vs “technical issue”      |
-| 2   | Data cost estimation không đủ hoặc bias theo khu vực/loại xe                                                                   | AI đưa ra giá sai lệch lớn → user mất trust hoặc nghĩ gara “vẽ bệnh”                                                  | Trả về **price range + confidence level**; show nguồn dữ liệu; cho phép feedback loop từ user                                      |
-| 3   | AI bỏ sót lỗi critical (false negative), phân loại nhầm thành “minor”                                                          | User tiếp tục sử dụng xe → có thể gây hỏng nghiêm trọng hoặc mất an toàn                                              | Rule-based safety layer (hard constraints); nếu có pattern nguy hiểm → auto escalate “Critical”; luôn khuyến nghị kiểm tra thực tế |
+| 1   |  AI tự động gọi cứu hộ (automation) nhưng user không thực sự cần hoặc nhập sai vị trí | Gọi nhầm cứu hộ, sai địa điểm → delay xử lý thật, user không nhận ra lỗi ngay | Xác nhận lại trước khi call ("Bạn có chắc cần cứu hộ khẩn cấp không?") + hiển thị location + nút cancel/undo      |
+| 2   | Data trạng thái thợ không real-time (thợ đã bận nhưng hệ thống vẫn hiển thị available) | AI điều phối thợ không đến → user bị bỏ rơi, đặc biệt nguy hiểm trong tình huống khẩn cấp                        | Sync trạng thái real-time (WebSocket/Firebase), TTL cho availability, fallback gọi nhiều thợ cùng lúc          |
+| 3   | AI bỏ sót lỗi critical (false negative), phân loại nhầm thành “low”                                                          | User tiếp tục sử dụng xe → có thể gây hỏng nghiêm trọng hoặc mất an toàn                                              | Rule-based safety layer (hard constraints); nếu có pattern nguy hiểm → auto escalate “Critical”; luôn khuyến nghị kiểm tra thực tế |
 
 ---
 
@@ -129,14 +116,14 @@ Liệt kê các cách product có thể fail — tập trung vào những lỗi 
 ## 6. Mini AI spec (1 trang)
 
 **Product này giải gì, cho ai?**
-Đây là một AI assistant dành cho **chủ xe (xe máy/ô tô, đặc biệt là user VinFast)** không có kiến thức kỹ thuật. Vấn đề chính là user mô tả lỗi mơ hồ (“xe rung”, “kêu lạ”, “hao xăng”), không biết mức độ nghiêm trọng, không biết giá sửa chữa hợp lý, và gặp khó khăn khi cần liên hệ thợ/cứu hộ. Product giúp **rút ngắn thời gian từ “có vấn đề” → “hành động đúng”**.
+Đây là một AI assistant dành cho **chủ xe (xe máy/ô tô, đặc biệt là user VinFast)** không có kiến thức kỹ thuật. Vấn đề chính là user mô tả lỗi mơ hồ (“xe rung”, “kêu lạ”), không biết mức độ nghiêm trọng, không biết giá sửa chữa hợp lý, và gặp khó khăn khi cần liên hệ thợ/cứu hộ. Product giúp **rút ngắn thời gian từ “có vấn đề” → “hành động đúng”**.
 
 ---
 
 **AI làm gì (automation vs augmentation)?**
 Hệ thống theo hướng **augmentation**:
 
-* Nhận input: text mô tả + audio (tiếng xe)
+* Nhận input: text mô tả
 * Hỏi follow-up để làm rõ triệu chứng
 * Suy luận:
 
@@ -173,24 +160,24 @@ Target:
 **System flow (end-to-end)**
 
 1. User nhập mô tả / gửi audio
-2. LLM + classifier:
-
+2. LLM:
+   
    * Parse intent
    * Detect symptom entities
-3. Clarification loop (nếu cần)
-4. Diagnosis engine:
-
+4. Clarification loop (nếu cần)
+5. Diagnosis engine:
+6. 
    * Hybrid: LLM reasoning + rule-based + knowledge base
-5. Output:
+7. Output:
 
    * Nguyên nhân (ranked)
    * Mức độ nguy hiểm
    * Hành động đề xuất
-6. Retrieval:
+8. Retrieval:
 
    * Giá sửa chữa (market DB)
    * Gara/thợ (geo + availability API)
-7. Action layer:
+9. Action layer:
 
    * Booking / emergency dispatch
 
@@ -222,7 +209,7 @@ Hệ thống tạo **data flywheel mạnh** từ hành vi thực tế:
 
 * Input data:
 
-  * Mô tả lỗi (text, audio)
+  * Mô tả lỗi (text)
   * Context (loại xe, khu vực, thời gian)
 
 * Behavioral signals:
@@ -248,7 +235,7 @@ Hệ thống tạo **data flywheel mạnh** từ hành vi thực tế:
 
 ---
 
-**Why this wins (moat)**
+**Why this wins**
 
 * Dữ liệu hành vi + kết quả sửa chữa thực tế (khó crawl/public)
 * Kết hợp **diagnosis + pricing + action** (end-to-end, không chỉ chatbot)

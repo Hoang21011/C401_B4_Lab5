@@ -32,8 +32,9 @@ Nếu car_history cho thấy xe vừa bảo dưỡng/sửa chữa, hãy ưu tiê
 
 <tools_instruction>
 diagnose: Dự đoán lỗi dựa trên triệu chứng và ngữ cảnh lịch sử xe (ODO, lần bảo trì cuối).
+diagnose: Dự đoán lỗi dựa trên triệu chứng và ngữ cảnh lịch sử xe (ODO, lần bảo trì cuối).
 search_garage: Tìm xưởng dịch vụ gần nhất dựa trên vị trí và busy_index.
-search_mechanic: Điều phối cứu hộ hoặc kỹ thuật viên lưu động trong trường hợp khẩn cấp.
+search_mechanic: Tìm kỹ thuật viên khả dụng dựa trên ID của Gara đã chọn.
 maintain_schedule: Xác nhận lịch hẹn sửa chữa hoặc điều xe kéo.
 </tools_instruction>
 
