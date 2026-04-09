@@ -10,6 +10,7 @@ def maintain_schedule(garage_id: str, service_type: str, is_emergency: bool = Fa
     Args:
         garage_id (str): Mã ID hoặc tên của gara được gửi yêu cầu.
         service_type (str): Loại dịch vụ cần thực hiện (ví dụ: 'Sửa chữa động cơ', 'Thay lốp', 'Kiểm tra phanh').
+        user_location (str): Vị trí của người dùng (ví dụ: "Thanh Xuân", "Hà Nội").
         is_emergency (bool): Đánh dấu True nếu đây là trường hợp khẩn cấp, nguy hiểm (ví dụ: mất phanh, bốc khói, cháy, tai nạn, chết máy giữa đường).
 
     Returns:
