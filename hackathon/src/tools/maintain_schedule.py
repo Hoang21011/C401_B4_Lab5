@@ -2,7 +2,7 @@ import random
 from langchain_core.tools import tool
 
 @tool
-def make_appointment(garage_id: str, service_type: str, is_emergency: bool = False) -> str:
+def maintain_schedule(garage_id: str, service_type: str, is_emergency: bool = False, user_location: str = "") -> str:
     """
     Đặt lịch hẹn sửa chữa xe với gara hoặc yêu cầu cứu hộ khẩn cấp.
     Sử dụng tool này khi người dùng đã đồng ý chọn một gara, hoặc khi hệ thống phát hiện tình trạng khẩn cấp cần gọi xe cứu hộ ngay.
@@ -26,6 +26,7 @@ def make_appointment(garage_id: str, service_type: str, is_emergency: bool = Fal
             f"🚨 ĐẶT LỊCH CỨU HỘ KHẨN CẤP THÀNH CÔNG\n"
             f"- Gara tiếp nhận: {garage_id}\n"
             f"- Dịch vụ điều động: **{final_service}**\n"
+            f"- Vị trí cứu hộ: **{user_location if user_location else 'Chưa cung cấp'}**\n"
             f"- Trạng thái: Đã kết nối khẩn cấp, xe cứu hộ đang di chuyển tới vị trí của bạn.\n"
             f"- Thời gian dự kiến đến nơi: **{eta_minutes} phút**.\n"
             f"\n*Lưu ý an toàn: Vui lòng bật đèn cảnh báo nguy hiểm, giữ khoảng cách an toàn với phương tiện và chú ý điện thoại liên hệ!*"
@@ -47,7 +48,7 @@ def make_appointment(garage_id: str, service_type: str, is_emergency: bool = Fal
 if __name__ == "__main__":
     # Script test thử tool 
     print("--- Test Normal ---")
-    print(make_appointment.invoke({"garage_id": "GARA_01 - VinFast Thảo Điền", "service_type": "Bảo dưỡng định kỳ", "is_emergency": False}))
+    print(maintain_schedule.invoke({"garage_id": "GARA_01 - VinFast Thảo Điền", "service_type": "Bảo dưỡng định kỳ", "is_emergency": False}))
     
     print("\n--- Test Emergency ---")
-    print(make_appointment.invoke({"garage_id": "GARA_02 - Cứu hộ 24/7", "service_type": "Thay bình ắc quy", "is_emergency": True}))
+    print(maintain_schedule.invoke({"garage_id": "GARA_02 - Cứu hộ 24/7", "service_type": "Thay bình ắc quy", "is_emergency": True}))
