@@ -46,7 +46,7 @@ Có marginal value không? (Model đã biết cái này chưa?) <br> Có. Dữ l
 
 ---
 
-### **Feature 3: Điều phối Cứu hộ & Kết nối thợ khẩn cấp (Emergency Assistance)**
+### **Feature 2: Điều phối Cứu hộ & Kết nối thợ khẩn cấp (Emergency Assistance)**
 
 **Trigger:** User gửi tin nhắn có từ khóa khẩn cấp ("xe chết máy giữa đường", "nổ lốp", "mất phanh") hoặc kết quả chẩn đoán ở Feature 1 xác định lỗi nguy hiểm không thể tiếp tục di chuyển.
 
