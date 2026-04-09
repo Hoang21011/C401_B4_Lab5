@@ -1,6 +1,0 @@
-# VinFast EV Support Agent - Requirements
-langgraph>=0.2.0
-langchain-core>=0.3.0
-langchain-openai>=0.2.0
-# sentence-transformers>=3.0.0   # semantic embedding (multilingual)
-numpy>=1.24.0
