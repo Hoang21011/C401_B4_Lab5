@@ -35,7 +35,7 @@ Có marginal value không? (Model đã biết cái này chưa?) <br> Có. Dữ l
 
 ### **Feature 1: Chẩn đoán lỗi qua âm thanh và mô tả**
 
-**Trigger:** User nhập mô tả mơ hồ hoặc gửi đoạn ghi âm tiếng "kêu lạ" → AI phân tích và trả kết quả chẩn đoán sơ bộ.
+**Trigger:** User nhập mô tả mơ hồ → AI phân tích và trả kết quả chẩn đoán sơ bộ.
 
 | Path | Câu hỏi thiết kế | Mô tả |
 |------|-------------------|-------|
@@ -43,19 +43,6 @@ Có marginal value không? (Model đã biết cái này chưa?) <br> Có. Dữ l
 | **Low-confidence — AI không chắc** | System báo "không chắc" bằng cách nào? User quyết thế nào? | Chatbot phản hồi: "Có 2 khả năng xảy ra: Lỗi A (60%) hoặc Lỗi B (40%)". AI yêu cầu user làm thêm 1 hành động để thu hẹp kết quả. |
 | **Failure — AI sai** | User biết AI sai bằng cách nào? Recover ra sao? | User thấy chẩn đoán không khớp (Ví dụ: AI báo lỗi động cơ nhưng xe vẫn rung khi tắt máy). User bảo "Không phải lỗi này" → Hệ thống chuyển hướng sang bộ câu hỏi loại trừ hoặc kết nối thợ. |
 | **Correction — user sửa** | User sửa bằng cách nào? Data đó đi vào đâu? | User chọn vùng lỗi đúng trên sơ đồ xe 3D hoặc nhập kết luận từ thợ sau khi đi sửa về → Lưu vào **Correction Log** kèm file âm thanh gốc để re-train model. |
-
----
-
-### **Feature 2: Tra cứu Benchmark giá sửa chữa**
-
-**Trigger:** Sau khi xác định lỗi → AI truy xuất cơ sở dữ liệu thị trường → Đưa ra khoảng giá dự kiến.
-
-| Path | Câu hỏi thiết kế | Mô tả |
-|------|-------------------|-------|
-| **Happy — AI đúng, tự tin** | User thấy gì? Flow kết thúc ra sao? | Hiển thị bảng giá chi tiết (Phụ tùng + Công thợ) dựa trên khu vực của user. User thấy minh bạch, chọn "Ghé gara gần nhất". |
-| **Low-confidence — AI không chắc** | System báo "không chắc" bằng cách nào? User quyết thế nào? | AI báo: "Giá phụ tùng này đang biến động". Hiển thị khoảng giá rộng (Ví dụ: 1.2tr - 2tr) kèm danh sách 3 gara có báo giá thực tế gần nhất để user tự so sánh. |
-| **Failure — AI sai** | User biết AI sai bằng cách nào? Recover ra sao? | User ra gara và nhận báo giá lệch quá nhiều (>30%) so với AI → User chụp ảnh hóa đơn gửi vào chat để "khiếu nại" hoặc cập nhật thông tin. |
-| **Correction — user sửa** | User sửa bằng cách nào? Data đó đi vào đâu? | User nhập số tiền thực tế đã chi trả → Dữ liệu đi vào **Market Price Database** để cập nhật benchmark real-time cho các user khác cùng khu vực. |
 
 ---
 
@@ -106,9 +93,9 @@ Liệt kê các cách product có thể fail — tập trung vào những lỗi 
 
 | #   | Trigger                                                                                                                        | Hậu quả                                                                                                               | Mitigation                                                                                                                         |
 | --- | ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | AI hiểu sai ngữ cảnh do ngôn ngữ tự nhiên (vd: user nói “hao xăng” nhưng thực ra do thói quen lái xe, không phải lỗi kỹ thuật) | AI vẫn đưa ra chẩn đoán “có vẻ hợp lý” → user tin nhưng thực tế không có lỗi → sửa chữa không cần thiết (waste money) | Clarify intent bằng câu hỏi phân biệt (behavior vs mechanical); dùng decision tree để tách “usage issue” vs “technical issue”      |
-| 2   | Data cost estimation không đủ hoặc bias theo khu vực/loại xe                                                                   | AI đưa ra giá sai lệch lớn → user mất trust hoặc nghĩ gara “vẽ bệnh”                                                  | Trả về **price range + confidence level**; show nguồn dữ liệu; cho phép feedback loop từ user                                      |
-| 3   | AI bỏ sót lỗi critical (false negative), phân loại nhầm thành “minor”                                                          | User tiếp tục sử dụng xe → có thể gây hỏng nghiêm trọng hoặc mất an toàn                                              | Rule-based safety layer (hard constraints); nếu có pattern nguy hiểm → auto escalate “Critical”; luôn khuyến nghị kiểm tra thực tế |
+| 1   |  AI tự động gọi cứu hộ (automation) nhưng user không thực sự cần hoặc nhập sai vị trí | Gọi nhầm cứu hộ, sai địa điểm → delay xử lý thật, user không nhận ra lỗi ngay | Xác nhận lại trước khi call ("Bạn có chắc cần cứu hộ khẩn cấp không?") + hiển thị location + nút cancel/undo      |
+| 2   | Data trạng thái thợ không real-time (thợ đã bận nhưng hệ thống vẫn hiển thị available) | AI điều phối thợ không đến → user bị bỏ rơi, đặc biệt nguy hiểm trong tình huống khẩn cấp                        | Sync trạng thái real-time (WebSocket/Firebase), TTL cho availability, fallback gọi nhiều thợ cùng lúc          |
+| 3   | AI bỏ sót lỗi critical (false negative), phân loại nhầm thành “low”                                                          | User tiếp tục sử dụng xe → có thể gây hỏng nghiêm trọng hoặc mất an toàn                                              | Rule-based safety layer (hard constraints); nếu có pattern nguy hiểm → auto escalate “Critical”; luôn khuyến nghị kiểm tra thực tế |
 
 ---
 
