@@ -37,5 +37,3 @@ def search_garages(location: str) -> str:
         return f"Không tìm thấy garage tại '{location}'."
 
     return "\n".join(results)
-
-print(search_garages.invoke("Hai Bà Trưng"))
