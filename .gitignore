@@ -1,3 +1,5 @@
 /venv/
-/hackathon/.env
+*.env
 /hackathon/plan.md
+*.pyc
+__pycache__
