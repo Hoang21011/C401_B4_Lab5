@@ -21,6 +21,6 @@ Chatbot thu thập thông số xe và dẫn dắt người dùng làm rõ các t
 | Thành viên | Phần | Output |
 |-----------|------|--------|
 | Chi | User Stories 4 Paths + System Prompt + Slides Designer | system_prompt.txt, spec/spec_final.md phần 1, hình ảnh Mini AI Spec, demo/demo_slides.pdf |
-| Trang | UX Designer + Mock Data + Define Tool | spec/spec_final.md phần 1, mock data: car_data.json, mock_garages.json, mock_mechanics.json; tool search_garages.json |
-| Châu | Eval metrics + ROI + demo slides | spec/spec-final.md phần 3, 5, demo/slides.pdf |
+| Trang | UX Designer + Mock Data + Define Tool | spec/spec_final.md phần 1, mock data: car_data.json, mock_garages.json, mock_mechanics.json; tool search_garages.py |
+| Nghia | ROI 3 Kịch Bản + Define Tool + Quality Control | spec/spec_final.md 5, Tool search_mechanic, Consistent Spec|
 | Dũng | UI prototype + demo script | prototype/, demo/demo-script.md |
