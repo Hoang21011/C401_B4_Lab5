@@ -33,7 +33,7 @@ Có marginal value không? (Model đã biết cái này chưa?) <br> Có. Dữ l
 
 ## 2. User Stories — 4 paths
 
-### **Feature 1: Chẩn đoán lỗi qua âm thanh và mô tả**
+### **Feature 1: Chẩn đoán lỗi qua mô tả**
 
 **Trigger:** User nhập mô tả mơ hồ → AI phân tích và trả kết quả chẩn đoán sơ bộ.
 
