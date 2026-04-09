@@ -122,7 +122,7 @@ Liệt kê các cách product có thể fail — tập trung vào những lỗi 
 ---
 
 <img width="981" height="801" alt="image" src="https://github.com/user-attachments/assets/c55493e8-d808-4465-ad2d-08f4700b33a1" />
-<img width="981" height="801" alt="image" src="https://github.com/user-attachments/assets/c55493e8-d808-4465-ad2d-08f4700b33a1" />
+
 
 
 **AI làm gì (automation vs augmentation)?**
